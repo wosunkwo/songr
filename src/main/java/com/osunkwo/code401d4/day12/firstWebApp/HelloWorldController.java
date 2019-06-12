@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.regex.Pattern;
 
+import static com.osunkwo.code401d4.day12.firstWebApp.NumberFact.driver;
+
 @RestController
 
 public class HelloWorldController {
@@ -31,5 +33,15 @@ public class HelloWorldController {
                 sentence = " " + tempSentence[i] + sentence;
         }
         return sentence;
+    }
+
+    //************** Stretch goal functions ********************//
+
+    //method that takes a number then makes a request to the
+    //numbers api to get a fact about that number
+    @GetMapping("/number")
+    @ResponseBody
+    public String numberFact(@RequestParam int number){
+       return driver(number);
     }
 }
