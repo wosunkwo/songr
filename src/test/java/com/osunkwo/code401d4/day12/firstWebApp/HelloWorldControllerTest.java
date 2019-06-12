@@ -8,15 +8,15 @@ import static org.junit.Assert.*;
 
 public class HelloWorldControllerTest {
 
+    HelloWorldController controller;
     @Before
     public void initilizingTheClass(){
-        HelloWorldController controller = new HelloWorldController();
+         controller = new HelloWorldController();
     }
 
     //test case for the method that returns back hello world at path /hello
     @Test
     public void testForHelloWorldPath(){
-//        HelloWorldController controller = new HelloWorldController();
         String expectedOutput = "Hello World";
         assertEquals("This should return through if the functions return value is the same as the expected output", expectedOutput, controller.getHellWorld());
     }
@@ -25,7 +25,6 @@ public class HelloWorldControllerTest {
     //it at path /capitalize/{any string}
     @Test
     public void testForCapitalizeWorldPath(){
-        HelloWorldController controller = new HelloWorldController();
         String expectedOutput = "HELLO WORLD";
         assertEquals("This should return through if the functions return value is the same as the expected output", expectedOutput, controller.capitalizeWorld("hello world"));
     }
@@ -34,7 +33,6 @@ public class HelloWorldControllerTest {
     //at path /reverse
     @Test
     public void testForReverseSentencePath(){
-        HelloWorldController controller = new HelloWorldController();
         String expectedOutput = "WORLD HELLO";
         assertEquals("This should return through if the functions return value is the same as the expected output", expectedOutput, controller.reverseSentence("HELLO WORLD"));
     }
