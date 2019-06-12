@@ -6,10 +6,10 @@ This repository cotains a spring application that runs on port 8080 and handles 
 /number
 
 
-a) The first path prints "Hello World" on the users screen
-b) The second path capitalizes any world that is passed after the last forward slash(/)
-c) The third path reverses any sentence passed to it.
-d) The fourth path gets a number paramater and makes a request to a numbers api and returns a fact about that number (to access this path type "http://localhost:8080/number?number="what ever number you want""
+1) The first path prints "Hello World" on the users screen
+2) The second path capitalizes any world that is passed after the last forward slash(/)
+3) The third path reverses any sentence passed to it.
+4) The fourth path gets a number paramater and makes a request to a numbers api and returns a fact about that number (to access this path type "http://localhost:8080/number?number="what ever number you want""
 
 HOW TO RUN
 1) Fork this repo
