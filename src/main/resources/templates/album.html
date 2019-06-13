@@ -3,11 +3,12 @@
     <title>Hello! Welcome to my Album Website</title>
 </head>
 <body>
-<h1>This is a List of All the Albums in Our Database</h1>
+<h1 style="text-align:center;">This is a List of All the Albums in Our Database</h1>
 
+<a href="addNewFileForm" style="text-align:center; display:block;"> Add a new album </a>
 <ul>
     <li th:each="album : ${albums}">
-        <img th:src="${album.imageUrl}" style="width: 100px;"> </img>
+        <img th:src="${album.imageUrl}" style="width: 120px;"> </img>
         <p> Album Name: <span th:text="${album.title}"></span></p>
         <p> Artist Name: <span th:text="${album.artist}"></span></p>
         <p> Number of Songs: <span th:text="${album.songCount}"> </span></p>
@@ -15,7 +16,7 @@
         <hr>
     </li>
 </ul>
-<a href="addNewFileForm"> Add a new album</a>
+
 
 </body>
 </html>
