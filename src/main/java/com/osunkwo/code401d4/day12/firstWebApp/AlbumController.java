@@ -28,8 +28,9 @@ public class AlbumController {
         return "addNewFileForm";
     }
 
-    @PostMapping(value = "/album/add")
-    public RedirectView addIntoDatabase(@RequestParam("title") String title, @RequestParam("artist") String artist, @RequestParam("songCount") int songCount, @RequestParam("length") int length, @RequestParam("imageUrl") String imageUrl) {
+    @PostMapping("/album")
+//    public RedirectView addIntoDatabase(@RequestParam("title") String title, @RequestParam("artist") String artist, @RequestParam("songCount") int songCount, @RequestParam("length") int length, @RequestParam("imageUrl") String imageUrl) {
+    public RedirectView addIntoDatabase(String title, String artist, int songCount, int length, String imageUrl) {
         Album newAlbum =  new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(newAlbum);
         return new RedirectView("/album");
