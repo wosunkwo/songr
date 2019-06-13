@@ -4,13 +4,15 @@
 </head>
 <body>
 <h1>This is a List of All the Albums in Our Database</h1>
+
 <ul>
     <li th:each="album : ${albums}">
         <img th:src="${album.imageUrl}" style="width: 100px;"> </img>
-        <span th:text="${album.title}"></span>
-        <span th:text="${album.artist}"></span>
-        <span th:text="${album.songCount}"> </span>
-        <span th:text="${album.length}"> </span>
+        <p> Album Name: <span th:text="${album.title}"></span></p>
+        <p> Artist Name: <span th:text="${album.artist}"></span></p>
+        <p> Number of Songs: <span th:text="${album.songCount}"> </span></p>
+        <p> Length of Album: <span th:text="${album.length}"> </span></p>
+        <hr>
     </li>
 </ul>
 <a href="addNewFileForm"> Add a new album</a>
