@@ -7,10 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.util.Iterator;
 
 @Controller
 public class AlbumController {
@@ -24,7 +22,6 @@ public class AlbumController {
         m.addAttribute("albums", albums);
         return "album";
     }
-
 
     @GetMapping("/addNewFileForm")
     public String addIntoForm(){
