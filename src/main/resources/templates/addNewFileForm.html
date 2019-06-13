@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello! Welcome to my Album Website</title>
+</head>
+<body>
+<h1>Add New Album</h1>
+
+<form action="/album/add" method="POST">
+    Title:<br>
+    <input type="text" name="title"><br>
+    Artist:<br>
+    <input type="text" name="artist"><br>
+    Song Count:<br>
+    <input type="number" name="songCount"><br>
+    Length:<br>
+    <input type="number" name="length"><br>
+    Image Url:<br>
+    <input type="text" name="imageUrl"><br>
+    <input type="submit" value="SUBMIT">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello! Welcome to my Album Website</title>
+</head>
+<body>
+<h1>This is a List of All the Albums in Our Database</h1>
+<ul>
+    <li th:each="album : ${albums}">
+        <img th:src="${album.imageUrl}" style="width: 100px;"> </img>
+        <span th:text="${album.title}"></span>
+        <span th:text="${album.artist}"></span>
+        <span th:text="${album.songCount}"> </span>
+        <span th:text="${album.length}"> </span>
+    </li>
+</ul>
+<a href="addNewFileForm"> Add a new album</a>
+
+</body>
+</html>
