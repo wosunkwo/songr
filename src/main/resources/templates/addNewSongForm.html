@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello! Welcome to my Album Website</title>
+</head>
+<body>
+
+<a href="album">Go to Album page</a>
+<h1 style = "text-align:center; display:block;">Add a New Song</h1>
+<form style="text-align:center; display:block;" action="/song" method="POST">
+    Title:<br>
+    <input type="text" name="title"><br>
+    Length:<br>
+    <input type="number" name="length"><br>
+    Track Number:<br>
+    <input type="number" name="trackNumber"><br>
+    Album:<br>
+    <input type="text" name="album"><br>
+    <input type="submit" value="SUBMIT">
+</form>
+
+<h1 style="text-align:center;">These are the current songs in our Database</h1>
+<!--<h2 style="text-align:center; color:red;" th:text="${albumWasNotFoundErrorMessage}"></h2>-->
+<ul>
+    <li th:each="song : ${songs}">
+        <p> Song Name: <span th:text="${song.title}"></span></p>
+        <p> Song Length: <span th:text="${song.length}"></span></p>
+        <p> Track Number: <span th:text="${song.trackNumber}"> </span></p>
+        <p> Album: <span th:text="${song.album.title}"> </span> <img th:src="${song.album.imageUrl}" style="width: 120px;"> </img> </p>
+        <hr>
+    </li>
+</ul>
+
+
+
+</body>
+</html>
