@@ -3,7 +3,21 @@
     <title>Hello! Welcome to my Album Website</title>
 </head>
 <body>
-<h1>YOU GOT HERE!!!!!</h1>
+
+<a href="/album">Go to Album page</a>
+<div style = "text-align:center; display:block;">
+    <img th:src="${albumToShow.imageUrl}" style="width: 120px;">
+    <p> Album Name: <span th:text="${albumToShow.title}"></span></p>
+    <p> Artist Name: <span th:text="${albumToShow.artist}"></span></p>
+    <p> Number of Songs: <span th:text="${albumToShow.songCount}"> </span></p>
+    <p> Length of Album: <span th:text="${albumToShow.length}"> </span></p>
+    <hr>
+    <p>List of Songs: </p>
+    <ol>
+        <li th:each="song: ${albumToShow.songs}" ><p th:text="${song.title}"></p></li>
+    </ol>
+
+</div>
 
 
 </body>

@@ -63,10 +63,10 @@ public class AlbumController {
         }
     }
 
-    @GetMapping("/individualAlbum/{id}")
-    public String showIndividualAlbum(@PathVariable long albumId, Model m){
-        Optional<Album> albumToShow =  albumRepository.findById(albumId);
-        m.addAttribute("albumToShow", albumToShow);
+    @GetMapping("/individualAlbum/{albumTitle}")
+    public String showIndividualAlbum(@PathVariable String albumTitle, Model m){
+        List<Album> albumToShow = albumRepository.findByTitle(albumTitle);
+        m.addAttribute("albumToShow", albumToShow.get(0));
         return "individualAlbumPage";
     }
 }
