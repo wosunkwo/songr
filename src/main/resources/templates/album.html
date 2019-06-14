@@ -3,16 +3,26 @@
     <title>Hello! Welcome to my Album Website</title>
 </head>
 <body>
-<h1 style="text-align:center;">This is a List of All the Albums in Our Database</h1>
+
+<h2 style="text-align:center;">This is a List of All the Albums in Our Database</h2>
 
 <a href="addNewFileForm" style="text-align:center; display:block;"> Add a new album </a>
+<a href="addNewSongForm" style="text-align:center; display:block;"> Add a new song to an album</a>
 <ul>
     <li th:each="album : ${albums}">
-        <img th:src="${album.imageUrl}" style="width: 120px;"> </img>
+
+        <img th:src="${album.imageUrl}" style="width: 120px;">
+
         <p> Album Name: <span th:text="${album.title}"></span></p>
         <p> Artist Name: <span th:text="${album.artist}"></span></p>
         <p> Number of Songs: <span th:text="${album.songCount}"> </span></p>
         <p> Length of Album: <span th:text="${album.length}"> </span></p>
+        <p>List of Songs: </p>
+        <ol>
+            <li th:each="song: ${album.songs}" ><p th:text="${song.title}"></p></li>
+        </ol>
+        <a th:href="@{'/individualAlbum/' + ${album.id}}" > See more Details </a>
+
         <hr>
     </li>
 </ul>

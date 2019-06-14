@@ -1,9 +1,7 @@
 package com.osunkwo.code401d4.day12.firstWebApp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -11,11 +9,16 @@ public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
+    @Column(unique = true)
     String title;
+
     String artist;
     int songCount;
     int length;
     String imageUrl;
+
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
 
     public Album(){}
 
@@ -45,5 +48,9 @@ public class Album {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
     }
 }
