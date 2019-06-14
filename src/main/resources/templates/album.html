@@ -21,7 +21,7 @@
         <ol>
             <li th:each="song: ${album.songs}" ><p th:text="${song.title}"></p></li>
         </ol>
-        <a th:href="@{'/individualAlbum/' + ${album.id}}" > See more Details </a>
+        <a th:href="@{'/individualAlbum/' + ${album.title}}" > See more Details </a>
 
         <hr>
     </li>
